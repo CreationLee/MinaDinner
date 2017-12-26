@@ -1,0 +1,5 @@
+/* success.wxss */
+@import "../../style/weui.wxss";
+page{
+    background-color: #FFFFFF;
+}

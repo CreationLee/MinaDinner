@@ -1,0 +1,98 @@
+@import "../../style/weui.wxss";
+.order{
+    height: 100%
+}
+.header {
+	position: fixed;
+	display: -webkit-flex;
+	left: 0;
+	top: 0;
+	width: 100%;
+	padding: 20rpx;
+	box-sizing: border-box;
+	z-index: 1;
+	-webkit-transition: background 0.5s ease-in-out;
+    /*background: #feb70f;*/
+}
+.header.scrolled {
+	background: #feb70f;
+}
+.header .icon {
+	width: 40rpx;
+	height: 40rpx;
+	vertical-align: top;
+}
+.header .location {
+	color: #fff;
+	font-size: 30rpx;
+	line-height: 40rpx;
+	min-width: 100rpx;
+	max-width: 340rpx;
+	padding: 10rpx 20rpx 10rpx 10rpx;
+	border-radius: 30rpx;
+	background: rgba(0,0,0,0.3);
+	margin-right: 20rpx;
+	vertical-align: middle;
+}
+.lists{
+    margin-top: 80rpx;
+    height:100%;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    height:200rpx;
+    margin: 0 auto;
+    /*margin-left:30rpx;*/
+    background-color:#fafafa;
+    border-bottom: 1rpx dashed #646464;
+}
+.list-le{
+    height:150rpx;
+    width:150rpx;
+    margin:25rpx 0 20rpx 25rpx;
+}
+.list-le image{
+    float: left;
+    height:150rpx;
+    width:150rpx;
+    overflow: none;
+}
+.list-middle{
+    display: flex;
+    flex-direction: column;
+    width:300rpx;
+    height: 200rpx;
+    margin: 25rpx 0 25rpx 20rpx;
+}
+.list-middle text{
+    font-size:35rpx;
+    line-height: 35rpx;
+}
+.list-f-name{
+  color:#646464;
+}
+.list-f-price{
+    color:#f45044;
+}
+.list-right{
+    display: flex;
+    flex-direction: row;
+    width:150rpx;
+    height:100rpx;
+    line-height: 100rpx;
+    margin-top: 70rpx;
+}
+.list-right image{
+    width:50rpx;
+    height:50rpx;
+}
+.list-num{
+    height:80rpx;
+    width: 50rpx;
+    line-height: 80rpx;
+    text-align: center; 
+}
+.weui-form-preview{
+    background-color:#fafafa;
+}

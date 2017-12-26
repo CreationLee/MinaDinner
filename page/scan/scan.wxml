@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="bgimg">
+     <image src="../../imgs/scan/6.png" />
+  </view>
+  <view class="page__hd"> 
+     <view class="button-sp-area">
+        <button bindtap="direct" class="weui-btn" type="default" plain="true">
+        <image src='../../imgs/scan/scan.png' />
+         <text>扫码点餐</text>
+        </button>
+     </view>
+  </view>
+</view>

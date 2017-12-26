@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "page/scan/scan",
+    "page/shop/shop",
+    "page/order/order",
+    "page/success/success"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#feb70f",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efefef",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "快点吧"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
