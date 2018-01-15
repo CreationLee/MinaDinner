@@ -11,16 +11,19 @@ function __args() {
 			setting.success = arguments[1];
 		}
 	}
-	if (setting.url.indexOf('https://') !== 0) {
-		setting.url = 'https://wxapp.im20.com.cn' + setting.url;
+	if (setting.url.indexOf('http://') !== 0) {
+		setting.url = 'http://dinner.me' + setting.url;
 	}
+  setting.fail = function(res) { console.warn('fail',res); }
+
 	return setting;
 }
-function __json(method, setting) {
+function __json(method, setting) { 
 	setting.method = method;
 	setting.header = {
 		'content-type': 'application/json'
 	};
+  
 	wx.request(setting);
 }
 
