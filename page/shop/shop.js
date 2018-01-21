@@ -21,17 +21,22 @@ Page({
 		},
 		showCartDetail: false
 	},
+
 	onLoad: function (options) {
     var that = this;
+    // server.getJSON('/restaurant/1', function (res) {
+    //   console.log('database',res);
+    // });
     wx.request({
       url: 'http://www.orders.autodone.com?rid=' + 8,
       method: 'GET',
       success: function (res) {
         console.log(res.data);
         res.data.cat.forEach(function(classify, i){
-          classify.id = String.fromCharCode(65+i);
+          classify.id = String.fromCharCode(65+200);
+          console.log('form', classify.id); return false;
        })
-       console.log(res.data.cat);
+       
        that.setData({
           'shop.name': res.data.res.rname,
           'shop.anounce': res.data.res.announce,
@@ -41,11 +46,7 @@ Page({
           classifySeleted: res.data.cat[0].id
         });
 
-      },
-      fail: function (res) {
-        console.log('出错')
       }
-
     })
     
     // this.data.goodsList.forEach(function (classify, i) {
@@ -63,6 +64,7 @@ Page({
 		// 	}
 		// }
 	},
+
 	onShow: function (e) {
     
     },

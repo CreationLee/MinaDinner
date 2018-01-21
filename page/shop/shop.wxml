@@ -7,11 +7,16 @@
 		<view class="desc">{{shop.anounce}}</view>
 	</view>
 	<view class="content-container">
+
+    <!-- 分类 -->
 		<scroll-view class="classify-container" scroll-y="true">
 			<view class="classify {{classifySeleted==classify.id?'active':''}}" wx:for="{{goodsList}}" wx:for-item="classify" wx:key="id" data-id="{{classify.id}}" bindtap="tapClassify">
 				<view class="name">{{classify.cname}}</view>
 			</view>
 		</scroll-view>
+    <!-- 分类 -->
+
+    <!-- 菜品 -->
 		<scroll-view class="goods-container" scroll-y="true" scroll-into-view="{{classifyViewed}}" bindscroll="onGoodsScroll">
 			<view wx:for="{{goodsList}}" wx:for-item="classify" wx:key="id" id="{{classify.id}}">
 				<view class="title">{{classify.cname}}</view>
@@ -26,6 +31,8 @@
 				</view>
 			</view>
 		</scroll-view>
+    <!-- 菜品 -->
+    
 	</view>
 	<view class="cart-detail" hidden="{{!showCartDetail||!cart.count}}">
 		<view class="mask" bindtap="hideCartDetail"></view>

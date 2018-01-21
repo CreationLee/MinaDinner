@@ -41,7 +41,6 @@ App({
 		var self = this;
 		wx.login({
 			success: function (res) {
-				console.log('wx.login', res)
 				server.getJSON('/WxAppApi/setUserSessionKey', {code: res.code}, function (res) {
           self.rd_session = res.data.session_key;
 					self.globalData.hasLogin = true;
