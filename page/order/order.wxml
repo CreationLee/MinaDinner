@@ -9,9 +9,7 @@
    <!--菜单详情部分-->
  <scroll-view scroll-y='true' class="lists">
    <view class='list'>
-     <view class='list-le'>
-       <image src="../../imgs/order/fortest1.jpg" />
-     </view>
+     
      <view class="list-middle">
        <text class='list-f-name'>
        青椒肉丝

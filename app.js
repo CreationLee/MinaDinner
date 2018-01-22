@@ -40,7 +40,6 @@ App({
 			success: function (res) {
 				console.log('wx.login',res)
         server.getJSON('/WxAppApi/setUserSessionKey', {code: res.code}, function (res) {
-          console.log('setUserSessionKey', res.data.session_key)
           self.rd_session = res.data.session_key;
 					self.globalData.hasLogin = true;
 					wx.setStorageSync('rd_session', self.rd_session);
@@ -49,21 +48,22 @@ App({
 			}
 		});
 	},
+
 	getUserInfo: function() {
 		var self = this;
 		wx.getUserInfo({
 			success: function(res) {
 				console.log('getUserInfo', res)
 				self.globalData.userInfo = res.userInfo;
-				server.getJSON('/WxAppApi/checkSignature', {
-					rd_session: self.rd_session,
-					result: res
-				}, function (res) {
-					console.log('checkSignature', res)
-					if (res.data.errorcode) {
-						// TODO:验证有误处理
-					}
-				});
+				// server.getJSON('/WxAppApi/checkSignature', {
+				// 	rd_session: self.rd_session,
+				// 	result: res
+				// }, function (res) {
+				// 	console.log('checkSignature', res)
+				// 	if (res.data.errorcode) {
+				// 		// TODO:验证有误处理
+				// 	}
+				// });
 			}
 		});
 	}

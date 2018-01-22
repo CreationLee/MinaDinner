@@ -1,37 +1,43 @@
 <view class="container">
 	<view class="header {{scrollDown?'hidden':''}}">
-		<image class="logo" src="http://orders.autodone.com{{shop.logo}}"/>
+		<image class="logo" src="dinner.me{{shop.logo}}"/>
 		<view class="name ellipsis">{{shop.name}}</view>
-		<view class="welcome ellipsis">{{goods[0].fname}}</view>
+		<view class="welcome ellipsis"> </view>
 		<view class="line"></view>
-		<view class="desc">{{shop.anounce}}</view>
+		<view class="desc">{{shop.announce}}</view>
 	</view>
+
 	<view class="content-container">
+  <!-- 分类 -->
 		<scroll-view class="classify-container" scroll-y="true">
 			<view class="classify {{classifySeleted==classify.id?'active':''}}" wx:for="{{goodsList}}" wx:for-item="classify" wx:key="id" data-id="{{classify.id}}" bindtap="tapClassify">
-				<view class="name">{{classify.cname}}</view>
+				<view class="name">{{classify.name}}</view>
 			</view>
 		</scroll-view>
+    <!-- 分类 -->
+    <!-- 商品 -->
 		<scroll-view class="goods-container" scroll-y="true" scroll-into-view="{{classifyViewed}}" bindscroll="onGoodsScroll">
 			<view wx:for="{{goodsList}}" wx:for-item="classify" wx:key="id" id="{{classify.id}}">
-				<view class="title">{{classify.cname}}</view>
-				<view class="goods" wx:for="{{classify.list}}" wx:for-item="id" wx:key="*this">
+				<view class="title">{{classify.name}}</view>
+				<view class="goods" wx:for="{{classify.dishes}}" wx:for-item="dish" wx:key="*this">
 					<image class="pic" src="http://orders.autodone.com{{goods[id].fimg}}"></image>
-					<view class="name ellipsis">{{goods[id].fname}}{{id}}</view>
-          <view class="sold">月售{{goods[id].sold}}</view>
-					<view class="price">￥{{goods[id].price}}</view>
-					<view class="addCart" bindtap="tapAddCart" data-id="{{id}}">
+					<view class="name ellipsis">{{ dish.name }}</view>
+          <view class="sold">月售33</view>
+					<view class="price">￥{{dish.price}}</view>
+					<view class="addCart" bindtap="tapAddCart" data-id="{{dish.id}}">
 						<image src="/imgs/shop/plus.png"></image>
 					</view>
 				</view>
 			</view>
 		</scroll-view>
+    <!-- 商品 -->
 	</view>
+  
 	<view class="cart-detail" hidden="{{!showCartDetail||!cart.count}}">
 		<view class="mask" bindtap="hideCartDetail"></view>
 		<view class="list">
 			<view class="item" wx:for="{{cart.list}}" wx:for-index="id" wx:for-item="num" wx:key="id">
-				<view class="name ellipsis">{{goods[id].fname}}</view>
+				<view class="name ellipsis">{{goods[id].name}}</view>
 				<view class="total">￥{{goods[id].price*cart.list[id]}}</view>
 				<view class="reduce" data-id="{{id}}" bindtap="tapReduceCart">-</view>
 				<view class="num">{{num}}</view>
@@ -39,6 +45,7 @@
 			</view>
 		</view>
 	</view>
+
 	<view class="cart">
 		<view class="data" bindtap="showCartDetail">
 			<view class="icon">

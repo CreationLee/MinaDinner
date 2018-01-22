@@ -2,18 +2,21 @@ var app = getApp();
 var server = require('../../utils/server');
 Page({
 	data: {
-		goods: {
-			
-		},
-
+		
 		shop:{
-			name:'',
-
+			name: '',
+      logo: '',
+      announce: '',
+      tableNum: 0,
 		},
 		
 		goodsList: [
 			
 		],
+
+    goods: [
+
+    ],
 
 		cart: {
 			count: 0,
@@ -21,56 +24,50 @@ Page({
 			list: {},
 			shopid:'',
 		},
+
+    classifySeleted: '',
 		showCartDetail: false
 	},
+
 	onLoad: function (options) {
     var that = this;
-    wx.request({
-      url: 'http://www.orders.autodone.com?rid=' + 8,
-      method: 'GET',
-      success: function (res) {
-        console.log(res.data);
-        res.data.cat.forEach(function(classify, i){
-          classify.id = String.fromCharCode(65+i);
-       })
-       console.log(res.data.cat);
-       that.setData({
-          'shop.name': res.data.res.rname,
-          'shop.anounce': res.data.res.announce,
-          'shop.logo': res.data.res.rlogo,
-          goods: res.data.menu,
-          goodsList: res.data.cat,
-          classifySeleted: res.data.cat[0].id
-        });
-
-      },
-      fail: function (res) {
-        console.warn('出错')
-      }
-
-    })
-    
-    // this.data.goodsList.forEach(function (classify, i) {
-    //   console.log(85);
-
-    // })
-    
-		// var shopId = options.id;
-		// for (var i = 0; i < app.globalData.shops.length; ++i) {
-		// 	if (app.globalData.shops[i].id == shopId) {
-		// 		this.setData({
-		// 			shop: app.globalData.shops[i]
-		// 		});
-		// 		break;
-		// 	}
-		// }
+    server.getJSON('/restaurant/1', function (res) {
+      that.setMenuData(res.data);
+    });    
 	},
+
+  setMenuData: function (data) {
+    var that = this;
+    let goods = {};
+    data.dishCategories.forEach(function(classify, i){
+      classify.id = 'cate' + classify.id;
+      classify.dishes.forEach(function(dish, i){
+        goods[dish.id] = dish;
+      });
+    });
+    
+    that.setData({
+      'shop.name': data.name,
+      'shop.logo': data.logo,
+      'shop.announce': data.announce,
+      'shop.tableNum': data.table_num,
+
+      goods: goods,
+      goodsList: data.dishCategories,
+      classifySeleted: data.dishCategories[0].id
+
+    });
+
+  },
+
 	onShow: function (e) {
     
-    },
+  },
+
 	tapAddCart: function (e) {
 		this.addCart(e.target.dataset.id);
 	},
+
 	tapReduceCart: function (e) {
 		this.reduceCart(e.target.dataset.id);
 	},
@@ -90,9 +87,10 @@ Page({
 	},
 	countCart: function () {
 		var count = 0,
-			total = 0;
+			  total = 0;
+    
 		for (var id in this.data.cart.list) {
-			var goods = this.data.goods[id];
+			var goods = this.data.goods[id];``
 			count += this.data.cart.list[id];
 			total += goods.price * this.data.cart.list[id];
 		}
@@ -123,7 +121,7 @@ Page({
 			classifySeleted,
       len = this.data.goodsList.length;
 		this.data.goodsList.forEach(function (classify, i) {
-			var _h = 70 + classify.list.length * (46 * 3 + 20 * 2);
+			var _h = 70 + classify.dishes.length * (46 * 3 + 20 * 2);
 			if (scrollTop >= h - 100 / scale) {
 				classifySeleted = classify.id;
 			}
@@ -133,9 +131,10 @@ Page({
 			classifySeleted: classifySeleted
 		});
 	},
+
+  // 点击分类
 	tapClassify: function (e) {
 		var id = e.target.dataset.id;
-    console.log(id)
 		this.setData({
 			classifyViewed: id
 		});
@@ -146,6 +145,7 @@ Page({
 			});
 		}, 100);
 	},
+
 	showCartDetail: function () {
 		this.setData({
 			showCartDetail: !this.data.showCartDetail
@@ -209,7 +209,7 @@ Page({
       //   })
       // }
       wx.redirectTo({
-        url: '../success/success?formdata='+formdata,
+        url: '../order/order?formdata='+formdata,
         success: function (res) { },
         fail: function (res) { },
         complete: function (res) { },
