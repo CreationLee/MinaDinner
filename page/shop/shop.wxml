@@ -8,14 +8,24 @@
 	</view>
 
 	<view class="content-container">
+<<<<<<< HEAD
   <!-- 分类 -->
+=======
+
+    <!-- 分类 -->
+>>>>>>> 835cf3008b255248b8bf486d912efab22af28b0e
 		<scroll-view class="classify-container" scroll-y="true">
 			<view class="classify {{classifySeleted==classify.id?'active':''}}" wx:for="{{goodsList}}" wx:for-item="classify" wx:key="id" data-id="{{classify.id}}" bindtap="tapClassify">
 				<view class="name">{{classify.name}}</view>
 			</view>
 		</scroll-view>
     <!-- 分类 -->
+<<<<<<< HEAD
     <!-- 商品 -->
+=======
+
+    <!-- 菜品 -->
+>>>>>>> 835cf3008b255248b8bf486d912efab22af28b0e
 		<scroll-view class="goods-container" scroll-y="true" scroll-into-view="{{classifyViewed}}" bindscroll="onGoodsScroll">
 			<view wx:for="{{goodsList}}" wx:for-item="classify" wx:key="id" id="{{classify.id}}">
 				<view class="title">{{classify.name}}</view>
@@ -30,7 +40,12 @@
 				</view>
 			</view>
 		</scroll-view>
+<<<<<<< HEAD
     <!-- 商品 -->
+=======
+    <!-- 菜品 -->
+    
+>>>>>>> 835cf3008b255248b8bf486d912efab22af28b0e
 	</view>
   
 	<view class="cart-detail" hidden="{{!showCartDetail||!cart.count}}">

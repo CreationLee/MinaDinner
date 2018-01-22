@@ -31,6 +31,7 @@ Page({
 
 	onLoad: function (options) {
     var that = this;
+<<<<<<< HEAD
     server.getJSON('/restaurant/1', function (res) {
       that.setMenuData(res.data);
     });    
@@ -45,6 +46,32 @@ Page({
         goods[dish.id] = dish;
       });
     });
+=======
+    // server.getJSON('/restaurant/1', function (res) {
+    //   console.log('database',res);
+    // });
+    wx.request({
+      url: 'http://www.orders.autodone.com?rid=' + 8,
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data);
+        res.data.cat.forEach(function(classify, i){
+          classify.id = String.fromCharCode(65+200);
+          console.log('form', classify.id); return false;
+       })
+       
+       that.setData({
+          'shop.name': res.data.res.rname,
+          'shop.anounce': res.data.res.announce,
+          'shop.logo': res.data.res.rlogo,
+          goods: res.data.menu,
+          goodsList: res.data.cat,
+          classifySeleted: res.data.cat[0].id
+        });
+
+      }
+    })
+>>>>>>> 835cf3008b255248b8bf486d912efab22af28b0e
     
     that.setData({
       'shop.name': data.name,
@@ -60,6 +87,22 @@ Page({
 
   },
 
+<<<<<<< HEAD
+=======
+    // })
+    
+		// var shopId = options.id;
+		// for (var i = 0; i < app.globalData.shops.length; ++i) {
+		// 	if (app.globalData.shops[i].id == shopId) {
+		// 		this.setData({
+		// 			shop: app.globalData.shops[i]
+		// 		});
+		// 		break;
+		// 	}
+		// }
+	},
+
+>>>>>>> 835cf3008b255248b8bf486d912efab22af28b0e
 	onShow: function (e) {
     
   },
