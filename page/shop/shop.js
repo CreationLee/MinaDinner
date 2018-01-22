@@ -5,6 +5,7 @@ Page({
 		goods: {
 			
 		},
+
 		shop:{
 			name:'',
 
@@ -13,6 +14,7 @@ Page({
 		goodsList: [
 			
 		],
+
 		cart: {
 			count: 0,
 			total: 0,
@@ -43,7 +45,7 @@ Page({
 
       },
       fail: function (res) {
-        console.log('出错')
+        console.warn('出错')
       }
 
     })
