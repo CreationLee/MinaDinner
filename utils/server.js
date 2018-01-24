@@ -12,15 +12,6 @@ function __args() {
 		}
 	}
 	if (setting.url.indexOf('http://') !== 0) {
-<<<<<<< HEAD
-    setting.url = 'http://api.me' + setting.url;
-	}
-  console.log('para', setting);
-	return setting;
-}
-
-function __json(method, setting) {
-=======
 		setting.url = 'http://dinner.me' + setting.url;
 	}
   setting.fail = function(res) { console.warn('fail',res); }
@@ -28,7 +19,6 @@ function __json(method, setting) {
 	return setting;
 }
 function __json(method, setting) { 
->>>>>>> 835cf3008b255248b8bf486d912efab22af28b0e
 	setting.method = method;
 	setting.header = {
 		'content-type': 'application/json'

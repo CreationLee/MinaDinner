@@ -6,7 +6,7 @@
 	 {{shop}}{{tablenum}}号桌
 	 </view>
    </view>
-   <!--菜单详情部分-->
+<!--菜单详情部分-->
  <scroll-view scroll-y='true' class="lists">
    <view class='list'>
      
