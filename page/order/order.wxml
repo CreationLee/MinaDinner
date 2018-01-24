@@ -1,37 +1,30 @@
 <view class="order">
 <!--头部-->
-  <view class="header {{scrollDown?'scrolled':''}}">
-	<view class="location ellipsis">
-	 <image class="icon" src="/imgs/index/icon_location.png"/>
-	 {{shop}}{{tablenum}}号桌
-	 </view>
-   </view>
+
+  <!-- <view class="header {{scrollDown?'scrolled':''}}">
+    <view class="location ellipsis">
+      <image class="icon" src="/imgs/index/icon_location.png"/>
+      {{shop}}{{tablenum}}号桌
+    </view>
+  </view> -->
 <!--菜单详情部分-->
- <scroll-view scroll-y='true' class="lists">
-   <view class='list'>
-     
-     <view class="list-middle">
-       <text class='list-f-name'>
-       青椒肉丝
-       </text>
-       <text class="list-f-price">
-       ￥8
-       </text>
-     </view>
-    <view class="list-right">
-      <view class="list-minus">
-        <image src='../../imgs/order/minus.png'/>
-      </view>
-      <text class="list-num">1</text>
-      <view class="list-plus">
-        <image src="../../imgs/order/plus.png" />
-      </view>
-    </view> 
-   </view>
-   <form class='settle'>
-   <view class="memo">        
+  <view  class="page__bd">
+    <view class='list'>
+    <!-- 列表 -->
+    <view class="weui-cells__title">订单</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">活鱿鱼 x 3</view>
+                <view class="weui-cell__ft">¥ 46.5</view>
+            </view>
+        </view>
+    </view>    
+   
+    <!-- 表单 -->
+     <form class='settle'>
+    <view class="memo">        
       <view class="weui-cells weui-cells_after-title">
-         <view class="weui-cell weui-cell_input">
+          <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
                     <view class="weui-label">备注:</view>
                 </view>
@@ -77,7 +70,7 @@
       </view> 
       
 
-   </view>
-   </form>
- </scroll-view>
+    </view>
+    </form> 
+  </view>
 </view>
