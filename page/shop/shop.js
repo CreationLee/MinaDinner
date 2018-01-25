@@ -14,9 +14,7 @@ Page({
 			
 		],
 
-    goods: [
-
-    ],
+    goods: [ ],
 
 		cart: {
 			count: 0,
@@ -26,7 +24,8 @@ Page({
 		},
 
     classifySeleted: '',
-		showCartDetail: false
+		showCartDetail: false,
+    Syncfinish: 0
 	},
 
 	onLoad: function (options) {
@@ -57,6 +56,9 @@ Page({
       classifySeleted: data.dishCategories[0].id
 
     });
+    
+    wx.setStorageSync('shop',that.data.shop);
+    wx.setStorageSync('goods', that.data.goods);
 
   },
 
@@ -156,6 +158,21 @@ Page({
 			showCartDetail: false
 		});
 	},
+
+  takeBill: function () {
+    var that = this;
+    wx.setStorage({
+      key: 'cart',
+      data: that.data.cart,
+      success: function(){
+        wx.navigateTo({url:'../order/order'});
+      }
+    })
+
+  },
+
+
+// 结算先留着
 	openConfirm: function () {
 		var that=this;
         wx.showModal({
@@ -236,5 +253,7 @@ Page({
 	// 		console.log(res)
 	// 	});
 	// }
+
+
 });
 

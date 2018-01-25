@@ -1,8 +1,8 @@
 {
   "pages": [
+    "page/shop/shop",
     "page/order/order",
     "page/scan/scan",
-    "page/shop/shop",
     "page/success/success"
   ],
   "window": {
