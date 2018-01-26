@@ -54,19 +54,19 @@ App({
 		var self = this;
 		wx.getUserInfo({
 			success: function(res) {
-				//console.log('getUserInfo', res)
-				self.globalData.userInfo = res.userInfo;
-
-        //这一步先省略
-				// server.getJSON('/WxAppApi/checkSignature', {
-				// 	rd_session: self.rd_session,
-				// 	result: res
-				// }, function (res) {
-				// 	console.log('checkSignature', res)
-				// 	if (res.data.errorcode) {
-				// 		// TODO:验证有误处理
-				// 	}
-				// });
+				//self.globalData.userInfo = res.userInfo;
+        console.log('resuser',res);
+        
+        server.postJSON('/WxAppApi/checkSignature', {
+					rd_session: self.rd_session,
+          encryptedData: res.encryptedData,
+          iv: res.iv
+				}, function (res) {
+					console.log('checkSignature', res)
+					if (res.data.errorcode) {
+						// TODO:验证有误处理
+					}
+				});
 			}
 		});
 	}
