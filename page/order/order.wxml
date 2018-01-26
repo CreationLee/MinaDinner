@@ -1,23 +1,25 @@
 <view class="order">
-<!--头部-->
 
-  <!-- <view class="header {{scrollDown?'scrolled':''}}">
-    <view class="location ellipsis">
-      <image class="icon" src="/imgs/index/icon_location.png"/>
-      {{shop}}{{tablenum}}号桌
-    </view>
-  </view> -->
-<!--菜单详情部分-->
   <view  class="page__bd">
     <view class='list'>
-    <!-- 列表 -->
-    <view class="weui-cells__title">订单</view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">活鱿鱼 x 3</view>
-                <view class="weui-cell__ft">¥ 46.5</view>
-            </view>
+      <view class="weui-cells weui-cells_after-title ">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">深夜食堂</view>        
         </view>
+      </view>
+    <!-- 列表 -->
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd grey_text">订单列表</view>        
+        </view>
+      </view>
+    
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">活鱿鱼 x 3</view>
+          <view class="weui-cell__ft">¥ 46.5</view>
+        </view>
+      </view>
     </view>    
    
     <!-- 表单 -->

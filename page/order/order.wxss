@@ -2,36 +2,8 @@
 .order{
     height: 100%
 }
-.header {
-	display: -webkit-flex;
-	left: 0;
-	top: 0;
-	width: 100%;
-	padding: 20rpx;
-	box-sizing: border-box;
-	z-index: 1;
-	-webkit-transition: background 0.5s ease-in-out;
-    /*background: #feb70f;*/
-}
-.header.scrolled {
-	background: #feb70f;
-}
-.header .icon {
-	width: 40rpx;
-	height: 40rpx;
-	vertical-align: top;
-}
-.header .location {
-	color: #fff;
-	font-size: 30rpx;
-	line-height: 40rpx;
-	min-width: 100rpx;
-	max-width: 340rpx;
-	padding: 10rpx 20rpx 10rpx 10rpx;
-	border-radius: 30rpx;
-	background: rgba(0,0,0,0.3);
-	margin-right: 20rpx;
-	vertical-align: middle;
+.grey_text{
+  color: #999;
 }
 
 .weui-form-preview{
