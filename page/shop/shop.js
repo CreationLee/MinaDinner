@@ -46,6 +46,7 @@ Page({
     });
     
     that.setData({
+      'shop.id': data.id,
       'shop.name': data.name,
       'shop.logo': data.logo,
       'shop.announce': data.announce,

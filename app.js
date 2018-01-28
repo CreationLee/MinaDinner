@@ -1,6 +1,11 @@
 var server = require('./utils/server');
 
 App({
+  globalData: {
+    hasLogin: false,
+    userInfo: {},
+  },
+
 	onLaunch: function () {
 		var self = this;
 		var rd_session = wx.getStorageSync('rd_session');
@@ -30,11 +35,7 @@ App({
 	onHide: function () {
 		
 	},
-	globalData: {
-		hasLogin: false,
-		shopid: '',
-    userInfo:'',	
-	},
+  
 	rd_session: null,
 	login: function() {
 		var self = this;
@@ -42,7 +43,7 @@ App({
 			success: function (res) {
 				server.getJSON('/WxAppApi/setUserSessionKey', {code: res.code}, function (res) {
           self.rd_session = res.data.session_key;
-					self.globalData.hasLogin = true;
+          self.globalData.hasLogin = true;
 					wx.setStorageSync('rd_session', self.rd_session);
 					self.getUserInfo();
 				});
@@ -53,16 +54,16 @@ App({
 	getUserInfo: function() {
 		var self = this;
 		wx.getUserInfo({
-			success: function(res) {
-				//self.globalData.userInfo = res.userInfo;
-        console.log('resuser',res);
-        
+			success: function(res) {				       
         server.postJSON('/WxAppApi/checkSignature', {
 					rd_session: self.rd_session,
           encryptedData: res.encryptedData,
           iv: res.iv
 				}, function (res) {
-					console.log('checkSignature', res)
+          let userInfo = {};
+          userInfo.id = res.data.id;
+          userInfo.nickName = JSON.parse(res.data.info).nickName
+          self.globalData.userInfo = userInfo;					
 					if (res.data.errorcode) {
 						// TODO:验证有误处理
 					}

@@ -1,6 +1,10 @@
 @import "../../style/weui.wxss";
 .order{
-    height: 100%
+    height: 100%;
+}
+
+.list{
+  height: 100%;
 }
 
 .weui-form-preview{

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "page/shop/shop",
+    
     "page/order/order",
+    "page/shop/shop",
     "page/scan/scan",
     "page/success/success"
   ],
