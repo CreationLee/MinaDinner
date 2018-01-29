@@ -29,6 +29,7 @@ Page({
 	},
 
 	onLoad: function (options) {
+    wx.showLoading('加载中');
     var that = this;
     server.getJSON('/restaurant/1', function (res) {
       that.setMenuData(res.data);
@@ -44,7 +45,7 @@ Page({
         goods[dish.id] = dish;
       });
     });
-    console.log('data',data);
+    
     that.setData({
       'shop.id': data.id,
       'shop.name': data.name,
@@ -64,7 +65,7 @@ Page({
   },
 
 	onShow: function (e) {
-    
+    wx.hideLoading();
   },
 
 	tapAddCart: function (e) {

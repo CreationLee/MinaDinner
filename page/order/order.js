@@ -20,6 +20,7 @@ Page({
 	},
 
 	onLoad: function () {
+    wx.showLoading('加载中');
     var that = this;
     var shop = wx.getStorageSync('shop');
     var cart = wx.getStorageSync('cart');
@@ -33,7 +34,9 @@ Page({
 
 	},
 
-  onShow: function() {},
+  onShow: function() {
+    wx.hideLoading();
+  },
   
   checkBill: function() {
     let that = this;
