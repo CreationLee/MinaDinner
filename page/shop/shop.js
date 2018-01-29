@@ -44,7 +44,7 @@ Page({
         goods[dish.id] = dish;
       });
     });
-    
+    console.log('data',data);
     that.setData({
       'shop.id': data.id,
       'shop.name': data.name,

@@ -51,9 +51,10 @@
         </view>
       </view>
       <!-- 备注 -->
+      <view class='space'></view>
     </view>
     <!-- 购物车 -->
-    <view class="cart">
+     <view class="cart">
       <view class="data">
         <view class="icon">
           <image src="/imgs/shop/cart.png"></image>
@@ -64,7 +65,7 @@
       <form bindsubmit="checkBill" report-submit="true">
         <button class="yellow {{cart.count?'':'disabled'}}" formType="submit" disabled="{{!cart.count}}">去结算</button>
       </form>
-	  </view>
+	  </view> 
     <!-- 购物车 -->    
    
     

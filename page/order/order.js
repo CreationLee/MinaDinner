@@ -77,8 +77,8 @@ Page({
     let sn = 0;
     for (let i in this.data.cart.list){
       cartData[sn++] = {
-        id: i,
-        num: this.data.cart.list[i],
+        dish_id: i,
+        dish_num: this.data.cart.list[i],
         price: this.data.goods[i].price
       }
     }

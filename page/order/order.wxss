@@ -5,6 +5,13 @@
 
 .list{
   height: 100%;
+  position:relative;
+
+}
+
+.space{
+  height: 200rpx;
+  width: 100%;
 }
 
 .weui-form-preview{
@@ -59,7 +66,7 @@
 
 .cart {
 	display: -webkit-flex;
-	position: absolute;
+	position: fixed !important;
 	left: 0;
 	bottom: 0;
 	width: 100%;
