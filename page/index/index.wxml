@@ -1,0 +1,11 @@
+<view class='container'>
+  <!-- swiper -->
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="2000" duration="250">
+    <block wx:for="{{banners}}" wx:key="id">
+      <swiper-item>
+        <image bindtap="tapBanner" data-id="{{index}}" src="{{item.img}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- swiper -->
+</view>

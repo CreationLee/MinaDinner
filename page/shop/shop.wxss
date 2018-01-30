@@ -9,7 +9,7 @@ page {
 
 .header {
 	position: relative;
-	background: #feb70f;
+	background: #FF5933;
 	padding: 20rpx 40rpx;
 	color: #000;
 	-webkit-transition: all 0.6s ease-in-out;
