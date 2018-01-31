@@ -13,6 +13,32 @@
     "backgroundTextStyle": "dark",
     "navigationBarTitleText": "快点吧"
   },
+  "tabBar": {
+    "color": "#878787",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "backgroundColor": "#fcfcfc",
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "iconPath": "imgs/tabBar/home_2.png",
+        "selectedIconPath": "imgs/tabBar/home_1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "page/shop/shop",
+        "iconPath": "imgs/tabBar/home_2.png",
+        "selectedIconPath": "imgs/tabBar/home_1.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "page/scan/scan",
+        "iconPath": "imgs/tabBar/mine_2.png",
+        "selectedIconPath": "imgs/tabBar/mine_1.png",
+        "text": "我的"
+      }
+    ]
+  },
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,

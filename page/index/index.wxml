@@ -1,11 +1,21 @@
-<view class='container'>
-  <!-- swiper -->
-  <swiper class="banner" indicator-dots="true" autoplay="true" interval="2000" duration="250">
-    <block wx:for="{{banners}}" wx:key="id">
-      <swiper-item>
-        <image bindtap="tapBanner" data-id="{{index}}" src="{{item.img}}"/>
-      </swiper-item>
-    </block>
-  </swiper>
-  <!-- swiper -->
+<view class="page">
+  <view class='container'>
+    <!-- swiper -->
+    <swiper class="banner" indicator-dots="true" autoplay="true" interval="5000" duration="100">
+      <block wx:for="{{banners}}" wx:key="id">
+        <swiper-item>
+          <image bindtap="tapBanner" data-id="{{index}}" src="{{item.img}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- swiper -->
+
+    <!-- button -->
+    <view class='button'>
+      <button class="weui-btn scan-button" type="primary">扫码点餐</button>
+      <button class="weui-btn booking-button" type="primary" >预定</button>
+    </view>
+    <!-- button -->
+
+  </view>
 </view>
