@@ -8,7 +8,6 @@ scroll-view {
 	height: 100%;
 }
 
-
 .banner {
 	height: 330rpx;
   width: 95%;
@@ -26,13 +25,13 @@ scroll-view {
 
 .button{
   height:100%;
-  width: 70%;
+  width: 90%;
   margin-top: 150rpx;
   margin-left: auto;
   margin-right: auto;
 }
 .button .weui-btn{
-  line-height: 2.1;
+  line-height: 3;
   background-color: #F8A500;
 }
 .button .scan-button{

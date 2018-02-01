@@ -167,7 +167,7 @@ Page({
       key: 'cart',
       data: that.data.cart,
       success: function(){
-        wx.navigateTo({url:'../order/order'});
+        wx.navigateTo({ url:'../check/check'});
       }
     })
 

@@ -13,7 +13,9 @@
     <!-- button -->
     <view class='button'>
       <button class="weui-btn scan-button" type="primary">扫码点餐</button>
-      <button class="weui-btn booking-button" type="primary" >预定</button>
+      <navigator url="../shop/shop" open-type="navigate">
+        <button class="weui-btn booking-button" type="primary" >预定</button>
+      </navigator>
     </view>
     <!-- button -->
 

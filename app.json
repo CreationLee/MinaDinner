@@ -1,8 +1,10 @@
 {
   "pages": [
+    "page/order/order",
     "page/index/index",
     "page/shop/shop",
-    "page/order/order",
+    "page/check/check",
+    
     "page/scan/scan",
     "page/success/success"
   ],
@@ -23,10 +25,10 @@
         "pagePath": "page/index/index",
         "iconPath": "imgs/tabBar/home_2.png",
         "selectedIconPath": "imgs/tabBar/home_1.png",
-        "text": "首页"
+        "text": "点餐"
       },
       {
-        "pagePath": "page/shop/shop",
+        "pagePath": "page/order/order",
         "iconPath": "imgs/tabBar/home_2.png",
         "selectedIconPath": "imgs/tabBar/home_1.png",
         "text": "订单"
