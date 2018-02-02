@@ -35,6 +35,7 @@ scroll-view {
   line-height: 2.1;
   background-color: #F8A500;
 }
-.button .scan-button{
+.button .booking-button{
+  margin-top: 30rpx;
   margin-bottom: 30rpx; 
 }

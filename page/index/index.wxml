@@ -14,6 +14,7 @@
     <view class='button'>
       <button class="weui-btn scan-button" type="primary">扫码点餐</button>
       <button class="weui-btn booking-button" type="primary" >预定</button>
+      <button class="weui-btn " type="primary" >合作</button>
     </view>
     <!-- button -->
 
