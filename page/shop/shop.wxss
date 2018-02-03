@@ -212,7 +212,7 @@ page {
 	top: -20rpx;
 	width: 100rpx;
 	height: 100rpx;
-	background: #feb70f;
+	background: #FF5933;
 	border-radius: 50%;
 }
 .cart .data .icon image {

@@ -4,6 +4,10 @@ App({
   globalData: {
     hasLogin: false,
     userInfo: {},
+    orderType: {
+      1: 'booking',
+      2: 'order',
+    }
   },
 
 	onLaunch: function () {
