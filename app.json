@@ -1,10 +1,10 @@
 {
   "pages": [
-    
+    "page/order/order",
     "page/index/index",
     "page/shop/shop",
     "page/check/check",
-    "page/order/order",
+    
     "page/scan/scan",
     "page/success/success"
   ],

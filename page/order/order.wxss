@@ -7,3 +7,15 @@
 .mini-btn{
     width: 50%;
 }
+
+button[type="primary"]{
+  background: #FF5933;
+}
+
+.today{
+  margin-top: 40rpx; 
+}
+
+.order{
+  color: #FF5933;
+}
