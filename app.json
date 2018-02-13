@@ -1,12 +1,12 @@
 {
   "pages": [
-    "page/order/order",
     "page/index/index",
+    "page/order/order",
     "page/shop/shop",
     "page/check/check",
-    
     "page/scan/scan",
-    "page/success/success"
+    "page/success/success",
+    "page/mine/mine"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FF5933",
@@ -34,7 +34,7 @@
         "text": "订单"
       },
       {
-        "pagePath": "page/scan/scan",
+        "pagePath": "page/mine/mine",
         "iconPath": "imgs/tabBar/mine.png",
         "selectedIconPath": "imgs/tabBar/mine_selected.png",
         "text": "我的"

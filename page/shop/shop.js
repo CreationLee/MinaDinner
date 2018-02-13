@@ -236,25 +236,6 @@ Page({
 	// }
 	// })
 }
-	// submit: function (e) {
-	// 	console.log(e);
-	// 	server.sendTemplate(e.detail.formId, null, function (res) {
-	// 		if (res.data.errorcode == 0) {
-	// 			wx.showModal({
-	// 				showCancel: false,
-	// 				title: '恭喜',
-	// 				content: '订单发送成功！下订单过程顺利完成，本例不再进行后续订单相关的功能。',
-	// 				success: function(res) {
-	// 					if (res.confirm) {
-	// 						wx.navigateBack();
-	// 					}
-	// 				}
-	// 			})
-	// 		}
-	// 	}, function (res) {
-	// 		console.log(res)
-	// 	});
-	// }
 
 
 });

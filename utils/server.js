@@ -23,7 +23,6 @@ function __json(method, setting) {
 	setting.header = {
 		'content-type': 'application/json'
 	};
-  
 	wx.request(setting);
 }
 

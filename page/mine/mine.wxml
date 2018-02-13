@@ -1,0 +1,15 @@
+<view class="container">
+	<view class="header">
+		<image class="avatar" src="{{userInfo.avatarUrl}}" />
+		<view class="nickname">{{userInfo.nickName}}</view>
+	</view>
+	<view class="section">
+		<view class="line judgement">我的优惠券</view>
+    <view class="line judgement">餐厅详解</view>
+    <view class="line judgement">商家入驻</view>
+	</view>
+	<view class="section">
+		<view class="line judgement">反馈</view>
+	</view>
+	
+</view>

@@ -49,13 +49,22 @@ Page({
         if (res.confirm===false){
           return;
         }
+        wx.showLoading('付款中');
 
         let orderData = that.orderData();
         let orderDishData = that.orderDishData();
 
         server.postJSON('/order/create', {orderData: orderData, orderDishData: orderDishData},
-          function(res){
-
+          async function(res){
+            wx.hideLoading();
+            await wx.showToast({
+              title: '下单成功',
+              icon: 'success',
+              duration: 3000
+            })
+            await wx.switchTab({
+              url: '/page/order/order',
+            })           
           }
         );
 

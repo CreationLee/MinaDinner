@@ -41,21 +41,21 @@ App({
 	},
   
 	rd_session: null,
-	login: function() {
+   login: function() {
 		var self = this;
 		wx.login({
 			success: function (res) {
-				server.getJSON('/WxAppApi/setUserSessionKey', {code: res.code}, function (res) {
+        server.getJSON('/WxAppApi/setUserSessionKey', { code: res.code }, async function (res) {
           self.rd_session = res.data.session_key;
           self.globalData.hasLogin = true;
 					wx.setStorageSync('rd_session', self.rd_session);
-					self.getUserInfo();
-				});
+					await self.getUserInfo();
+				},function(err){ console.log(err); return false;});
 			}
 		});
 	},
 
-	getUserInfo: function() {
+  getUserInfo: function() {
 		var self = this;
 		wx.getUserInfo({
 			success: function(res) {				       
@@ -66,8 +66,12 @@ App({
 				}, function (res) {
           let userInfo = {};
           userInfo.id = res.data.id;
-          userInfo.nickName = JSON.parse(res.data.info).nickName
-          self.globalData.userInfo = userInfo;					
+          let jsonInfo = JSON.parse(res.data.info);
+          userInfo.nickName = jsonInfo.nickName;
+          userInfo.avatarUrl = jsonInfo.avatarUrl;
+          console.log('uinfo', userInfo)
+          self.globalData.userInfo = userInfo;
+          console.log('globa', self.globalData)					
 					if (res.data.errorcode) {
 						// TODO:验证有误处理
 					}

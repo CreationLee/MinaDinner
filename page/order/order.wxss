@@ -1,4 +1,8 @@
 @import "../../style/weui.wxss";
+.page__bd{
+  height: 100%;
+  margin-bottom: 100rpx;
+}
 
 .button-sp-area{
     margin: 0 auto;
@@ -12,10 +16,26 @@ button[type="primary"]{
   background: #FF5933;
 }
 
+
 .today{
   margin-top: 40rpx; 
 }
 
 .order{
+  color: #FF5933;
+}
+
+.shopname{
+  text-align: left;
+  text-align-last: left;
+}
+
+.alldishes{
+  min-width: 50px;
+  max-width: 100%;
+  text-align: left;
+}
+
+.goshopping{
   color: #FF5933;
 }
