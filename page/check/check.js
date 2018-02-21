@@ -62,7 +62,7 @@ Page({
               icon: 'success',
               duration: 3000
             })
-            await wx.switchTab({
+            await wx.reLaunch({
               url: '/page/order/order',
             })           
           }

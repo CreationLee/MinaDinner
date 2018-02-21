@@ -21,6 +21,14 @@ button[type="primary"]{
   margin-top: 40rpx; 
 }
 
+.emptyorder{
+  margin: 0 auto;
+  text-align:center;
+  font-size:15px;
+  color: #878787;
+  margin-top: 100rpx;
+}
+
 .order{
   color: #FF5933;
 }

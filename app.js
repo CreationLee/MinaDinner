@@ -69,9 +69,7 @@ App({
           let jsonInfo = JSON.parse(res.data.info);
           userInfo.nickName = jsonInfo.nickName;
           userInfo.avatarUrl = jsonInfo.avatarUrl;
-          console.log('uinfo', userInfo)
-          self.globalData.userInfo = userInfo;
-          console.log('globa', self.globalData)					
+          self.globalData.userInfo = userInfo;				
 					if (res.data.errorcode) {
 						// TODO:验证有误处理
 					}

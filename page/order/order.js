@@ -7,7 +7,6 @@ Page({
 
     orders:[ ],
     buttonSelected: 'today',
-    time: 0,
     shop: {}
   },
 
@@ -15,19 +14,14 @@ Page({
     let that = this;
     let userId = app.globalData.userInfo.id;
     server.getJSON('/order/' + userId,function(res){
-      res.data.forEach(function(order,i){
-        order.revertedTime = that.timestampTotime(order.create_at);
-      });
-      console.log(res);
       that.setData({orders: res.data});
+      console.log(res);
       wx.getStorage({
         key: 'shop',
         success: function (res) { that.setData({ shop: res.data}); },
       })
       
     });
-    
-    that.setData({ time: that.getTimeStamp()})
     
   },
 
@@ -53,23 +47,6 @@ Page({
       that.setData({ buttonSelected: 'today' })
     }
   },
-
-  getTimeStamp: function(){
-    let time = new Date();
-    time.setHours(0);
-    time.setMinutes(0);
-    time.setSeconds(0);
-    time.setMilliseconds(0);
-    time.getTime();
-    time = Date.parse(time);
-    return time;
-  },
-
-  timestampTotime: function(date){
-    var date = new Date(parseInt(date));
-    return date.toLocaleString();
-  }
   
-
   
 })

@@ -16,8 +16,8 @@
     <!-- 按钮 -->
 
     <!-- 今日订单 -->
-    <block wx:if="{{buttonSelected == 'today'}}" wx:for="{{orders}}" wx:for-index="idx" wx:for-item="order" wx:key="key">
-      <view class='weui-form-preview today' wx:if="{{order.create_at>time}}">
+    <block wx:if="{{buttonSelected == 'today'}}">
+      <view class='weui-form-preview today' wx:for="{{orders.todayOrders}}" wx:for-index="idx" wx:for-item="order" wx:key="key">
         <view class="weui-form-preview__hd">
           <view class="weui-form-preview__item">  
               <view class="weui-form-preview__label shopname">{{shop.name}}</view>
@@ -48,6 +48,17 @@
           </navigator>
         </view>
       </view>
+      <!-- 今日订单为空 -->
+      <block wx:if="{{orders.todayOrders.length == 0}}">
+        <view class='emptyorder'>
+          今天您还没有订单～
+          <navigator url='/page/shop/shop' class="weui-form-preview__btn weui-form-preview__btn_primary order" hover-class="weui-form-preview__btn_active">
+            <button class="weui-btn" type="primary"  size="mini" bindtap='switchTap'>去点餐</button>
+          </navigator>
+        </view>
+      </block>
+      <!-- 今日订单为空 -->
+
     </block>
     <!-- 今日订单 -->
 
@@ -56,8 +67,8 @@
       <view class="weui-panel weui-panel_access">
         <view class="weui-panel__hd">全部订单</view>
           <view class="weui-panel__bd">
-              <view class="weui-media-box weui-media-box_text" wx:for="{{orders}}" wx:for-index="idx" wx:for-item="order" wx:key="key">
-                  <view class="weui-media-box__title weui-media-box__title_in-text">{{order.orderDishes[0].dish.name}}等{{order.orderDishes.length}}道</view>
+              <view class="weui-media-box weui-media-box_text" wx:for="{{orders.allOrders}}" wx:for-index="idx" wx:for-item="order" wx:key="key">
+                  <view class="weui-media-box__title weui-media-box__title_in-text">{{order.orderDishes[0].dish.name}}等{{order.orderDishes.length}}种</view>
                   <view class="weui-media-box__desc">
                     <view class='alldishes' wx:for="{{order.orderDishes}}" wx:for-index="didx" wx:for-item="dish" wx:key="dishkey">
                       {{dish.dish.name}}X{{dish.dish_num}}
@@ -78,7 +89,17 @@
                   </view>
               </view>
           </view>
-      </view>    
+      </view>
+      <!-- 全部订单为空 -->
+      <block wx:if="{{orders.allOrders.length == 0}}">
+        <view class='emptyorder'>
+          您还没有订单～
+          <navigator url='/page/shop/shop' class="weui-form-preview__btn weui-form-preview__btn_primary order" hover-class="weui-form-preview__btn_active">
+            <button class="weui-btn" type="primary"  size="mini" bindtap='switchTap'>去点餐</button>
+          </navigator>
+        </view>
+      </block>
+      <!-- 全部订单为空 -->    
     </scroll-view>
     <!-- 全部订单 -->
   </view>

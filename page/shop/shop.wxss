@@ -135,7 +135,7 @@ page {
 	bottom: 30rpx;
 	width: 64rpx;
 	height: 64rpx;
-	background: #feb70f;
+	background: #FF5933;
 	border-radius: 50%;
 }
 .goods-container .goods .addCart image {
